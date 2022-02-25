@@ -20,7 +20,7 @@ declare module 'mongoose' {
 
   interface PaginateOptions {
     select?: object | string | undefined;
-    collation?: import('mongodb').CollationDocument | undefined;
+    collation?: any | undefined;
     sort?: object | string | undefined;
     populate?:
       | PopulateOptions[]
@@ -70,7 +70,7 @@ declare module 'mongoose' {
     ? O['leanWithId'] extends true
       ? LeanDocument<T & { id: string }>
       : LeanDocument<T>
-    : EnforceDocument<T, TMethods>;
+    : HydratedDocument<T, TMethods>;
 
   interface PaginateModel<T, TQueryHelpers = {}, TMethods = {}>
     extends Model<T, TQueryHelpers, TMethods> {
