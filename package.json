@@ -6,11 +6,9 @@
   "types": "index.d.ts",
   "scripts": {
     "pretest": "npm run build",
-    "test": "./node_modules/.bin/mocha tests/*.js -R spec --ui bdd --timeout 9999999",
     "build": "babel src -d dist",
     "lint": "./node_modules/.bin/eslint \"tests\" \"src\" \".eslintrc.js\" --fix",
-    "prettier": "./node_modules/.bin/prettier --write \"{src,tests}/**/*.js\" \"*.md\"",
-    "prepublish": "npm run test"
+    "prettier": "./node_modules/.bin/prettier --write \"{src,tests}/**/*.js\" \"*.md\""
   },
   "husky": {
     "hooks": {
